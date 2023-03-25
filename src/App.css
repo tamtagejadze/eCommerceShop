@@ -100,12 +100,6 @@ a {
     font-weight: bold;
 }
 
-/* .items_div p {
-    margin-top: 5px;
-    color: rgb(3, 3, 108);
-    font-size: 12px;
-} */
-
 .items_div h3 {
     margin-top: 10px;
     color: rgb(243, 114, 45);
@@ -125,7 +119,7 @@ a {
 /* products details */
 
 .loader {
-    margin:auto;
+    margin: 150px auto;
     border: 10px solid #f3f3f3;
     border-radius: 50%;
     border-top: 10px solid gray;
@@ -208,31 +202,6 @@ a {
 }
 
 
-
-.product-qty {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 5px;
-    width: 15%;
-    height: 35px;
-    border: 1px solid rgb(193, 193, 235);
-    color: rgb(3, 3, 108);
-
-}
-
-.product-qty button {
-    border: none;
-    font-size: 25px;
-    background-color: transparent;
-    cursor: pointer;
-}
-
-.product-qty span {
-    font-size: 20px;
-}
-
 .comments-container {
     margin: 20px 0 20px 5px;
 }
@@ -268,6 +237,30 @@ a {
     color:#323132;
     margin-left: 5px;
 }
+
+.add-comment {
+    color:#323132;
+    margin-left: 5px;
+}
+
+/* categories */
+
+.categories-div {
+    margin-left: 20px;
+    margin-top: 5px;
+    display: flex;
+    flex-direction: row;
+}
+
+.categories-div button {
+    width: 150px;
+    background-color: #545254;
+    color: white;
+    padding: 2px 10px;
+    border-radius: 15px;
+    font-weight: 500;
+}
+
 /* registration */
 
 .divSignUp {

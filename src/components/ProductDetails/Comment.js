@@ -1,16 +1,13 @@
 import React, { useReducer, useState } from 'react'
 import { useQuery } from 'react-query';
-import addComment from '../../hook/addComment.reducer';
+import addComment,{ initialState } from '../../hook/addComment.reducer';
 import apiComments from '../../hook/apiComments';
+import Button from '../Button/Button';
 
 function Comment() {
     const {data} = useQuery("comments", () => apiComments("GET", "comments"))
-    const [comment, dispatch] = useReducer(addComment, [])
+    const [comment, dispatch] = useReducer(addComment, initialState)
     const [value, setValue] = useState("")
-
-    // const initialState = {
-    //     feedback: ''
-    //   };
 
     function addcomment(e){
         e.preventDefault();
@@ -20,8 +17,7 @@ function Comment() {
         setValue("")
     }
 
-
-    return (        
+    return (     
     
     <div className='comments-container'>       
         <div>
@@ -32,15 +28,16 @@ function Comment() {
                 value = {value} 
                 onChange={e => setValue(e.target.value)}
             />
+            <Button/>
             </form>
             <p className='top-comments'>Top Comments</p>
             <div className='add-comment'>
-                {/* <span>{feedback}</span> */}
+                <span>{comment.feedback}</span>
             </div> 
         </div>
     {
     (data || []).map((item) => {
-        if(item.id<4) return (
+        if(item.id<6) return (
             <div className='comment-div' key={item.id}>
                 <span>{item.user.username}</span>
                 <p>{item.body}</p>

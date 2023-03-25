@@ -5,11 +5,9 @@ import apiDetails from '../../hook/apiDetails';
 import Page from '../Page/Page';
 import {MdFavorite} from 'react-icons/md';
 import Comment from './Comment';
-// import productReducer from '../../hook/product.reducer';
 
 
 function ProductDetails() {
-    // const [state, dispatch] = useReducer(productReducer,{ count: 1 })  
     const param = useParams();
     const {data, isLoading} = useQuery(["products", param.productId], () => apiDetails("GET",  param.productId))
 
@@ -33,16 +31,10 @@ function ProductDetails() {
                 <div>
                     <h1>{data.price} $</h1>
                     <div>
-                    {/* <div className='product-qty'>
-                      <button onClick={() => dispatch({type: 'decrement'})}>-</button>
-                      <span>{state.count}</span>
-                      <button onClick={() => dispatch({type: 'increment'})}>+</button>
-                    </div> */}
-                    <button className='add_button'>Add to Cart</button>
+                    <Link to={'/registration'}><button className='add_button'>Add to Cart</button></Link>
                     </div>
                     <Link to={'/registration'}>
                         <div className='favorite-div'>
-                            {/* <p>Add to Favorites</p> */}
                             <MdFavorite className='favorite'/>
                         </div>
                     </Link>

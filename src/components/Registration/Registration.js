@@ -1,4 +1,5 @@
 import { useFormik } from 'formik';
+import { Link } from 'react-router-dom';
 import Page from '../Page/Page';
 
 const validate = (values, props) => {
@@ -89,7 +90,7 @@ const Registration = () => {
               {
               formik.errors.phone && <div style={{color :"red"}}>  {formik.errors.phone}</div>
               }              
-              <button className='registration-btn'>Log In</button>
+              <Link to={'/'}><button className='registration-btn' disabled={!formik.dirty || !formik.isValid}>Log In</button></Link>
           </form>
           </div>
           

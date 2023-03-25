@@ -1,4 +1,4 @@
-const initialState = {
+export const initialState = {
     feedback: ''
   };
 export default function addComment (state = initialState,action){
@@ -9,3 +9,6 @@ export default function addComment (state = initialState,action){
           return state;
       }
 }
+
+
+

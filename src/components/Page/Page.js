@@ -13,7 +13,7 @@ export default function Page ({children}){
             <li>
               <Link to={'/'}>Home</Link>
             </li>
-            <li>About</li>
+            <Link to={'/categories'}><li>Categories</li></Link>
             <li>
              <Link to={"/registration"}>
               <div className='login-div'>
